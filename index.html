@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanitarna Tombola</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎁 Kutak iznenađenja 🎁</h1>
+        <div id="poruka-vrsta">Odaberite kategoriju tombole:</div>
+
+        <div class="odabir-grupe" id="dinamicki-dugmiti"></div>
+
+        <div id="broj-okvir">?</div>
+
+        <button id="btn-izvuci" class="glavni-btn" onclick="izvuciBroj()" disabled>IZVUCI BROJ</button>
+        <div id="poruka">Molimo odaberite tombolu iznad.</div>
+    </div>
+
+    <button id="skriveni-admin-btn" onclick="otvoriAdmin()">⚙️ Admin</button>
+
+    <div id="adminModal" class="admin-panel">
+        <div class="admin-sadrzaj">
+            <button class="admin-btn-Zatvori" onclick="zatvoriAdmin()">Zatvori</button>
+            <h2>⚙️ Podešavanja Tombola</h2>
+            <hr>
+            
+            <h3>1. Upravljanje kategorijama</h3>
+            <table class="admin-tabela" id="tabela-kategorija">
+                <thead>
+                    <tr>
+                        <th>Naziv opcije (npr. Tombola 5 KM)</th>
+                        <th>Od broja</th>
+                        <th>Do broja</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-body">
+                    </tbody>
+            </table>
+            <button class="btn-akcija btn-dodaj" onclick="dodajNoviRed()">+ Dodaj novu kategoriju</button>
+            <br>
+            <button class="admin-btn-Spasi" onclick="spasiSveKategorije()">Spasi i ažuriraj sistem</button>
+            
+            <hr>
+            <h3>2. Ručno čekiranje iskorištenih brojeva</h3>
+            <p class="admin-uputstvo">Kliknite na broj da ga ručno označite kao izvučen (crven) ili vratite u igru.</p>
+            
+            <div id="admin-cekiranje-kontejner">
+                </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

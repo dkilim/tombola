@@ -1,0 +1,129 @@
+:root {
+    --bg-grad: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --accent: #ff9f43;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-grad);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.container { 
+    width: 100%; 
+    max-width: 600px; 
+}
+
+/* Responzivni naslov sa paketićima */
+h1 { 
+    font-size: 1.8rem; 
+    margin-top: 0;
+    margin-bottom: 5px; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+    white-space: nowrap; 
+}
+
+#poruka-vrsta {
+    opacity: 0.9; 
+    font-size: 1.1rem;
+}
+
+/* Selektor dinamičkih kategorija */
+.odabir-grupe {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-grupa {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-grupa.active {
+    background-color: white;
+    color: #764ba2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Glavni krug za broj */
+#broj-okvir {
+    font-size: 5.5rem;
+    font-weight: bold;
+    background: white;
+    color: #764ba2;
+    width: 180px;
+    height: 180px;
+    line-height: 180px;
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.slavlje { 
+    animation: pop 0.4s ease-in-out; 
+}
+
+@keyframes pop { 
+    0%, 100% { transform: scale(1); } 
+    50% { transform: scale(1.15); } 
+}
+
+button.glavni-btn {
+    padding: 12px 35px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.2s;
+}
+
+button.glavni-btn:hover { 
+    transform: scale(1.05); 
+    background-color: #ffaa54; 
+}
+
+button.glavni-btn:disabled { 
+    background-color: #bdc3c7; 
+    cursor: not-allowed; 
+}
+
+#poruka { 
+    font-size: 1.1rem; 
+    margin-top: 15px; 
+    color: #ffff80; 
+    min-height: 30px; 
+}
+
+/* 💻 Medijski upiti za veće ekrane (Desktop/Laptop) */
+@media (min-width: 768px) {
+    h1 { font-size: 3.2rem; }
+    .btn-grupa { font-size: 1.2rem; padding: 12px 25px; }
+    #broj-okvir { width: 260px; height: 260px; line-height: 260px; font-size: 8rem; }
+    button.glavni-btn { font-size: 1.8rem; padding: 15px 40px; }
+    #poruka { font-size: 1.4rem; }
+}
